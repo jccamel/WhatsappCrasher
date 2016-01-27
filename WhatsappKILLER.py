@@ -94,12 +94,13 @@ else:
 driver = webdriver.Firefox()
 driver.get(WEB)
 
-sleep(5)
-
-if lan=='English':
-  print '[+] Open whatsapp with QR code, press Enter when finish...'
-else:
-  print '[+] Abre whatsapp con el codigo QR, pulsa enter cuando lo tengas...'
+try:
+    element = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.CLASS_NAME, "entry-main")))
+finally:
+    if lan == 'English':
+        print '[+] Open whatsapp with QR code, press Enter when finish...'
+    else:
+        print '[+] Abre whatsapp con el codigo QR, pulsa enter cuando lo tengas...'
 
 raw_input()
 
