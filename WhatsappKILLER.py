@@ -14,8 +14,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import sys
-import time
-from time import sleep
 
 WEB = 'https://web.whatsapp.com' #web to open
 
